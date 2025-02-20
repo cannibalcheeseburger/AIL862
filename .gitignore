@@ -169,3 +169,10 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+slides
+
+Assignment1/imagesAndReportFormat/*
+Assignment2/images/*
+
+*.docx

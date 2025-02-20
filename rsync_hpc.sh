@@ -1,0 +1,1 @@
+rsync -aWvr --progress --files-from='rsync_files.txt' ./ aib242289@hpc.iitd.ac.in:~/AIL862/

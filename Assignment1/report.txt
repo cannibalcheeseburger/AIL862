@@ -1,0 +1,2 @@
+guassian filter < Median Blur (5)
+cosine similarity > euclidean > manhattan

@@ -1,0 +1,4 @@
+Assignment2/requirements.txt
+Assignment2/assign2.py
+Assignment2/Images/
+Assignment2/hpc_ass2.sh

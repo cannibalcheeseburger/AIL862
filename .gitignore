@@ -180,3 +180,6 @@ Assignment2/images/*
 Assignment3/data
 
 *.DS_Store*
+model.pth
+*.zip
+*.pth

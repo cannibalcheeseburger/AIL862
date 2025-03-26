@@ -1,0 +1,5 @@
+requirements.txt
+images
+report.pdf
+README.md
+segment.py

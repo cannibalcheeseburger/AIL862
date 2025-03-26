@@ -179,7 +179,9 @@ Assignment2/images/*
 
 Assignment3/data
 
-*.DS_Store*
+.DS_Store
 model.pth
 *.zip
 *.pth
+Assignment4/segmentation_masks
+Assignment4/kashish

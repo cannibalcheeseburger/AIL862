@@ -185,3 +185,4 @@ model.pth
 *.pth
 Assignment4/segmentation_masks
 Assignment4/kashish
+Assignment5/cityscapes

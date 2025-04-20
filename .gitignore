@@ -186,3 +186,7 @@ model.pth
 Assignment4/segmentation_masks
 Assignment4/kashish
 Assignment5/cityscapes
+Assignment5/VOCdevkit
+Assignment5/finetuned_segformer_dog
+Assignment5/pseudo_labels
+Assignment5/VOCtrainval_11-May-2012.tar

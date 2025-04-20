@@ -2,4 +2,5 @@ Assignment2/requirements.txt
 Assignment2/assign2.py
 Assignment2/Images/
 Assignment2/hpc_ass2.sh
-Assignment5
+Assignment5/sam_vit_b_01ec64.pth
+Assignment5/VOCtrainval_11-May-2012.tar

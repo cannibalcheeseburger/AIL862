@@ -1,0 +1,133 @@
+Presentation: ProS – Prompting-to-Simulate Generalized Knowledge for Universal Cross-Domain Retrieval
+Slide 1: Title Slide
+ProS: Prompting-to-Simulate Generalized Knowledge for Universal Cross-Domain Retrieval
+Authors: Kaipeng Fang, Jingkuan Song, Lianli Gao, Pengpeng Zeng, Zhi-Qi Cheng, Xiyao Li, Heng Tao Shen
+Your Name | Class | Date
+
+
+Slide 2: Motivation & Problem Statement
+Universal Cross-Domain Retrieval (UCDR):
+Retrieve semantically similar items across domains (e.g., sketches, photos, infographics), even for unseen domains and categories.
+Real-World Need:
+Applications like e-commerce search require models to handle new product styles and categories continuously.
+Key Challenge:
+Generalizing to both unknown domains (domain shift) and unknown categories (semantic shift).
+
+Slide 3: Limitations of Existing Methods
+Traditional Approaches:
+Fine-tune visual models (ResNet, ViT) or prompt-tune large models like CLIP.
+Full fine-tuning can hurt generalization and is computationally expensive.
+
+Existing prompt-tuning methods (e.g., CoOp, VPT) not designed for UCDR, limited in handling both domain and semantic shifts.
+
+Key Question:
+How can we leverage the general knowledge in large-scale pre-trained models for UCDR without sacrificing efficiency or generalization?
+
+Slide 4: ProS – The Proposed Solution
+First prompt-tuning method designed for UCDR
+Two-Stage Training Approach:
+Prompt Unit Learning (PUL):
+Learns domain and semantic prompt units using a mask-and-align strategy.
+Context-aware Simulator Learning (CSL):
+Trains a Content-aware Prompt Simulator (CaPS) to generate dynamic prompts for unseen domains and categories.
+Parameter Efficient:
+Only ~12.8% additional parameters vs. full fine-tuning.
+
+
+Slide 5: How ProS Works – Overview Diagram
+(Insert simplified version of Figure 2 from the paper)
+Stage 1: Learn prompt units for each domain and category.
+Stage 2: Use CaPS to simulate prompts for unseen domains/categories at test time.
+Retrieval: Use CLIP encoder with dynamic prompts for robust cross-domain retrieval.
+
+Slide 6: Method Details
+Prompt Unit Learning (PUL):
+Learns separate prompts for each training domain and class.
+Uses masking to ensure only relevant prompts are updated per sample.
+Context-aware Prompt Simulator (CaPS):
+Trained to generate dynamic prompts by simulating test scenarios where some domains/classes are masked out.
+Enables adaptation to unseen domains and categories.
+
+Slide 7: Experimental Setup
+Datasets:
+DomainNet (6 domains, 345 categories)
+Sketchy, TU-Berlin (sketch/image datasets)
+Evaluation Protocols:
+UCDR (unseen domains & categories)
+U
+c
+U 
+c
+ CDR (unseen categories)
+U
+d
+U 
+d
+ CDR (unseen domains)
+Metrics:
+Precision@k, mAP@k (mean Average Precision).
+
+Slide 8: Results – DomainNet (UCDR)
+Method	mAP@200 (Avg)	Prec@200 (Avg)
+SnMpNet	0.3010	0.2418
+SASA	0.4189	0.3544
+CLIP-Full	0.5229	0.4641
+CoOp	0.5238	0.4722
+VPT	0.5720	0.5203
+ProS	0.6052	0.5626
+ProS outperforms all baselines across all domains.
+
+UCDR and UdCDR evaluation results on DomainNet. UCDR has two different gallery settings, i.e. the gallery set consists of (1)
+only unseen class images (Unseen Gallery) or (2) both seen and unseen images from Real domain (Mixed Gallery).
+
+Slide 9: Results – Sketchy & TU-Berlin (
+U
+c
+U 
+c
+ CDR)
+Method	Sketchy mAP@200	TU-Berlin mAP@all
+SnMpNet	0.5781	0.3568
+SASA	0.6910	0.4715
+CLIP-Full	0.6553	0.6076
+CoOp	0.5074	0.5585
+VPT	0.6588	0.5574
+ProS	0.6991	0.6675
+ProS achieves the best performance, especially on challenging settings.
+
+UcCDR evaluation results on Sketchy and TU-Berlin.
+Consistent with [29, 37], we use Prec@200 and mAP@200 in
+Sketchy, and Prec@100 and mAP@all in TU-Berlin as evaluation
+metrics.
+
+
+Slide 10: Ablation Studies
+Key Findings:
+Removing domain or semantic prompt units reduces performance.
+Masking and the CaPS module are crucial for generalization.
+Optimal performance with two-layer CaPS and prompt length of 16.
+(Insert a simple bar chart or bullet summary of ablation results)
+
+Slide 11: Qualitative Analysis
+Feature Visualization:
+ProS produces more compact, well-separated clusters for unseen domains/categories.
+Retrieval Examples:
+Robust retrieval even for abstract queries (sketches, quickdraws).
+(Insert sample visualizations from the paper)
+
+Slide 12: Contributions & Takeaways
+First prompt-tuning method for UCDR using CLIP
+Novel two-stage training for dynamic, content-aware prompts
+State-of-the-art results with minimal parameter overhead
+Improved generalization to unseen domains and categories
+
+Slide 13: Conclusion
+ProS enables large pre-trained models like CLIP to generalize to new domains and categories efficiently and effectively.
+Sets a new benchmark for Universal Cross-Domain Retrieval.
+
+Slide 14: References & Acknowledgments
+Paper: Fang et al., "ProS: Prompting-to-simulate Generalized knowledge for Universal Cross-Domain Retrieval"
+Thanks to the authors and your class for their attention!
+Questions?
+
+
